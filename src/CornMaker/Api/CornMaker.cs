@@ -1,12 +1,29 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 
 public partial class CornMaker
-{ 
+{
     public static CornMaker Create()
     {
         return new CornMaker();
     }
+
+
+
+    public CornMaker GetFromDateTime(DateTime dateTime)
+    {
+
+        AtSeconds(dateTime.Second)
+        .AtMinutes(dateTime.Minute)
+        .AtHours(dateTime.Hour)
+        .AtDays(dateTime.Day)
+        .AtMonth(dateTime.Month);
+        return this;
+
+    }
+
+
 
 
     /// <summary>
@@ -20,7 +37,7 @@ public partial class CornMaker
         script.Append($"{(_seconds.Length == 0 ? "*" : _seconds.ToString())} ");
         script.Append($"{(_minutes.Length == 0 ? "*" : _minutes.ToString())} ");
         script.Append($"{(_hours.Length == 0 ? "*" : _hours.ToString())} ");
-        if (_week.Length>0)
+        if (_week.Length > 0)
         {
             script.Append($"? ");
             script.Append($"{(_month.Length == 0 ? "*" : _month.ToString())} ");
@@ -37,6 +54,15 @@ public partial class CornMaker
 
 
     }
-
+    public void Clear()
+    {
+        _days.Clear();
+        _hours.Clear();
+        _minutes.Clear();
+        _month.Clear();
+        _seconds.Clear();
+        _week.Clear();
+        _year.Clear();
+    }
 }
 

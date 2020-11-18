@@ -9,7 +9,7 @@ public partial class CornMaker
     /// 任意月都执行
     /// </summary>
     /// <returns></returns>
-    public CornHelper AnyMonth()
+    public CornMaker AnyMonth()
     {
 
         _month.Clear();
@@ -27,7 +27,7 @@ public partial class CornMaker
     /// <param name="startMonth">在第几月开始运行</param>
     /// <param name="monthInterval">以后每隔几月运行</param>
     /// <returns></returns>
-    public CornHelper IntervalMonth(int startMonth, int monthInterval)
+    public CornMaker IntervalMonth(int startMonth, int monthInterval)
     {
         if (_month.Length>0)
         {
@@ -46,7 +46,7 @@ public partial class CornMaker
     /// </summary>
     /// <param name="month">在第t1、t2、t3....分钟时开始工作</param>
     /// <returns></returns>
-    public CornHelper AtMonth(params int[] month)
+    public CornMaker AtMonth(params int[] month)
     {
 
         if (month != null && month.Length > 0)
@@ -55,7 +55,7 @@ public partial class CornMaker
             {
                 _month.Append(',');
             }
-            _month.Append(string.Join(',', month));
+            _month.Append(string.Join(",", month));
         }
         return this;
 
@@ -70,7 +70,7 @@ public partial class CornMaker
     /// <param name="startMonth">起始月数</param>
     /// <param name="endMonth">截止月数</param>
     /// <returns></returns>
-    public CornHelper RangeMonth(int startMonth, int endMonth)
+    public CornMaker RangeMonth(int startMonth, int endMonth)
     {
 
         if (_month.Length > 0)

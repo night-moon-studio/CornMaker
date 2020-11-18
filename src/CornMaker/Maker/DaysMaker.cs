@@ -10,7 +10,7 @@ public partial class CornMaker
     /// </summary>
     /// <param name="day">第几日</param>
     /// <returns></returns>
-    public CornHelper WorkDays(int day)
+    public CornMaker WorkDays(int day)
     {
 
         if (_days.Length>0)
@@ -29,7 +29,7 @@ public partial class CornMaker
     /// 任意日都执行
     /// </summary>
     /// <returns></returns>
-    public CornHelper AnyDays()
+    public CornMaker AnyDays()
     {
         _days.Clear();
         _days.Append("*");
@@ -44,7 +44,7 @@ public partial class CornMaker
     /// 最后一天
     /// </summary>
     /// <returns></returns>
-    public CornHelper AtMonthOfLastDays()
+    public CornMaker AtMonthOfLastDays()
     {
         if (_days.Length > 0)
         {
@@ -63,7 +63,7 @@ public partial class CornMaker
     /// <param name="startDays">在第几日开始运行</param>
     /// <param name="daysInterval">以后每隔几日运行</param>
     /// <returns></returns>
-    public CornHelper IntervalDays(int startDays, int daysInterval)
+    public CornMaker IntervalDays(int startDays, int daysInterval)
     {
         if (_days.Length > 0)
         {
@@ -82,7 +82,7 @@ public partial class CornMaker
     /// </summary>
     /// <param name="days">在第t1、t2、t3....时开始工作</param>
     /// <returns></returns>
-    public CornHelper AtDays(params int[] days)
+    public CornMaker AtDays(params int[] days)
     {
 
         if (days != null && days.Length > 0)
@@ -91,7 +91,7 @@ public partial class CornMaker
             {
                 _days.Append(',');
             }
-            _days.Append(string.Join(',', days));
+            _days.Append(string.Join(",", days));
         }
         return this;
 
@@ -106,7 +106,7 @@ public partial class CornMaker
     /// <param name="startDays">起始日数</param>
     /// <param name="endDays">截止日数</param>
     /// <returns></returns>
-    public CornHelper RangeDays(int startDays, int endDays)
+    public CornMaker RangeDays(int startDays, int endDays)
     {
 
         if (_days.Length > 0)

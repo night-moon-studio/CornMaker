@@ -9,7 +9,7 @@ public partial class CornMaker
     /// 任意秒都执行
     /// </summary>
     /// <returns></returns>
-    public CornHelper AnySeconds()
+    public CornMaker AnySeconds()
     {
 
         _seconds.Clear();
@@ -27,7 +27,7 @@ public partial class CornMaker
     /// <param name="startSeconds">在第几秒开始运行</param>
     /// <param name="secondsInterval">以后每隔几秒运行</param>
     /// <returns></returns>
-    public CornHelper IntervalSeconds(int startSeconds, int secondsInterval)
+    public CornMaker IntervalSeconds(int startSeconds, int secondsInterval)
     {
         if (_seconds.Length>0)
         {
@@ -46,7 +46,7 @@ public partial class CornMaker
     /// </summary>
     /// <param name="seconds">在第t1、t2、t3....秒时开始工作</param>
     /// <returns></returns>
-    public CornHelper AtSeconds(params int[] seconds)
+    public CornMaker AtSeconds(params int[] seconds)
     {
 
         if (seconds != null && seconds.Length > 0)
@@ -55,7 +55,7 @@ public partial class CornMaker
             {
                 _seconds.Append(',');
             }
-            _seconds.Append(string.Join(',', seconds));
+            _seconds.Append(string.Join(",", seconds));
         }
         return this;
 
@@ -70,7 +70,7 @@ public partial class CornMaker
     /// <param name="startSeconds">起始秒数</param>
     /// <param name="endSeconds">截止秒数</param>
     /// <returns></returns>
-    public CornHelper RangeSeconds(int startSeconds, int endSeconds)
+    public CornMaker RangeSeconds(int startSeconds, int endSeconds)
     {
 
         if (_seconds.Length > 0)
