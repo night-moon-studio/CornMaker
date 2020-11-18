@@ -107,7 +107,7 @@ public partial class CornMaker
 
 
     /// <summary>
-    /// 在周范围内每周第几天到几天都工作，星期日是第1天
+    /// 每周第几天到几天工作，星期日是第1天
     /// </summary>
     /// <param name="startWeek">起始周天数</param>
     /// <param name="endWeek">截止周天数</param>
