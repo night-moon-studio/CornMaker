@@ -6,7 +6,13 @@ namespace Project
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var interval = IntervalMaker.Create();
+            interval.Hours(25);
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("下一次运行任务的表达式："+interval.NextCorn());
+            }
+            Console.ReadKey();
         }
     }
 }
