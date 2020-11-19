@@ -1,8 +1,8 @@
-# CornMaker
-Corn 表达式生成  
+# CronMaker
+Cron 表达式生成  
 
 ```c#
 
-var cornScript = CornMaker.Create().....GetCornScript();
+var cronScript = CronMaker.Create().....GetCronScript();
 
 ```
