@@ -6,11 +6,11 @@ public class IntervalMaker
 
     private long _current;
     private long _timespan;
-    private readonly CornMaker _maker;
+    private readonly CronMaker _maker;
     private IntervalMaker(long? timespan = null, long? startTime = null)
     {
 
-        _maker = CornMaker.Create();
+        _maker = CronMaker.Create();
         _timespan = timespan.HasValue ? timespan.Value : 0;
         _current = startTime.HasValue ? startTime.Value : DateTime.Now.TimestampSeconds();
 
@@ -76,11 +76,11 @@ public class IntervalMaker
     /// 获取下一个定时表达式
     /// </summary>
     /// <returns></returns>
-    public string NextCorn()
+    public string NextCron()
     {
         _current += _timespan;
         _maker.Clear();
-        return _maker.GetFromDateTime(_current.DateTimeFromSeconds()).GetCornScript();
+        return _maker.GetFromDateTime(_current.DateTimeFromSeconds()).GetCronScript();
     }
 
 

@@ -2,16 +2,16 @@
 using System.Text;
 
 
-public partial class CornMaker
+public partial class CronMaker
 {
-    public static CornMaker Create()
+    public static CronMaker Create()
     {
-        return new CornMaker();
+        return new CronMaker();
     }
 
 
 
-    public CornMaker GetFromDateTime(DateTime dateTime)
+    public CronMaker GetFromDateTime(DateTime dateTime)
     {
 
         AtSeconds(dateTime.Second)
@@ -27,10 +27,10 @@ public partial class CornMaker
 
 
     /// <summary>
-    /// 获取 Corn 表达式
+    /// 获取 Cron 表达式
     /// </summary>
     /// <returns></returns>
-    public string GetCornScript()
+    public string GetCronScript()
     {
 
         StringBuilder script = new StringBuilder();

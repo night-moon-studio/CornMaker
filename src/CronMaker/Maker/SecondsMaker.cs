@@ -1,5 +1,5 @@
 ﻿using System.Text;
-public partial class CornMaker
+public partial class CronMaker
 {
 
     private readonly StringBuilder _seconds = new StringBuilder();
@@ -9,7 +9,7 @@ public partial class CornMaker
     /// 任意秒都执行
     /// </summary>
     /// <returns></returns>
-    public CornMaker AnySeconds()
+    public CronMaker AnySeconds()
     {
 
         _seconds.Clear();
@@ -27,7 +27,7 @@ public partial class CornMaker
     /// <param name="startSeconds">在第几秒开始运行</param>
     /// <param name="secondsInterval">以后每隔几秒运行</param>
     /// <returns></returns>
-    public CornMaker IntervalSeconds(int startSeconds, int secondsInterval)
+    public CronMaker IntervalSeconds(int startSeconds, int secondsInterval)
     {
         if (_seconds.Length>0)
         {
@@ -46,7 +46,7 @@ public partial class CornMaker
     /// </summary>
     /// <param name="seconds">在第t1、t2、t3....秒时开始工作</param>
     /// <returns></returns>
-    public CornMaker AtSeconds(params int[] seconds)
+    public CronMaker AtSeconds(params int[] seconds)
     {
 
         if (seconds != null && seconds.Length > 0)
@@ -70,7 +70,7 @@ public partial class CornMaker
     /// <param name="startSeconds">起始秒数</param>
     /// <param name="endSeconds">截止秒数</param>
     /// <returns></returns>
-    public CornMaker RangeSeconds(int startSeconds, int endSeconds)
+    public CronMaker RangeSeconds(int startSeconds, int endSeconds)
     {
 
         if (_seconds.Length > 0)

@@ -1,5 +1,5 @@
 ﻿using System.Text;
-public partial class CornMaker
+public partial class CronMaker
 {
 
     private readonly StringBuilder _hours = new StringBuilder();
@@ -8,7 +8,7 @@ public partial class CornMaker
     /// 任意小时都执行
     /// </summary>
     /// <returns></returns>
-    public CornMaker AnyHours()
+    public CronMaker AnyHours()
     {
 
         _hours.Clear();
@@ -26,7 +26,7 @@ public partial class CornMaker
     /// <param name="startHours">在第几小时开始运行</param>
     /// <param name="hoursInterval">以后每隔几小时运行</param>
     /// <returns></returns>
-    public CornMaker IntervalHours(int startHours, int hoursInterval)
+    public CronMaker IntervalHours(int startHours, int hoursInterval)
     {
         if (_hours.Length>0)
         {
@@ -45,7 +45,7 @@ public partial class CornMaker
     /// </summary>
     /// <param name="hours">在第t1、t2、t3....小时时开始工作</param>
     /// <returns></returns>
-    public CornMaker AtHours(params int[] hours)
+    public CronMaker AtHours(params int[] hours)
     {
 
         if (hours != null && hours.Length > 0)
@@ -69,7 +69,7 @@ public partial class CornMaker
     /// <param name="startHours">起始小时数</param>
     /// <param name="endHours">截止小时数</param>
     /// <returns></returns>
-    public CornMaker RangeHours(int startHours, int endHours)
+    public CronMaker RangeHours(int startHours, int endHours)
     {
 
         if (_hours.Length > 0)

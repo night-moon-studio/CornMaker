@@ -1,5 +1,5 @@
 ﻿using System.Text;
-public partial class CornMaker
+public partial class CronMaker
 {
 
     private readonly StringBuilder _days = new StringBuilder();
@@ -10,7 +10,7 @@ public partial class CornMaker
     /// </summary>
     /// <param name="day">第几日</param>
     /// <returns></returns>
-    public CornMaker WorkDays(int day)
+    public CronMaker WorkDays(int day)
     {
 
         if (_days.Length>0)
@@ -29,7 +29,7 @@ public partial class CornMaker
     /// 任意日都执行
     /// </summary>
     /// <returns></returns>
-    public CornMaker AnyDays()
+    public CronMaker AnyDays()
     {
         _days.Clear();
         _days.Append("*");
@@ -44,7 +44,7 @@ public partial class CornMaker
     /// 最后一天
     /// </summary>
     /// <returns></returns>
-    public CornMaker AtMonthOfLastDays()
+    public CronMaker AtMonthOfLastDays()
     {
         if (_days.Length > 0)
         {
@@ -63,7 +63,7 @@ public partial class CornMaker
     /// <param name="startDays">在第几日开始运行</param>
     /// <param name="daysInterval">以后每隔几日运行</param>
     /// <returns></returns>
-    public CornMaker IntervalDays(int startDays, int daysInterval)
+    public CronMaker IntervalDays(int startDays, int daysInterval)
     {
         if (_days.Length > 0)
         {
@@ -82,7 +82,7 @@ public partial class CornMaker
     /// </summary>
     /// <param name="days">在第t1、t2、t3....时开始工作</param>
     /// <returns></returns>
-    public CornMaker AtDays(params int[] days)
+    public CronMaker AtDays(params int[] days)
     {
 
         if (days != null && days.Length > 0)
@@ -106,7 +106,7 @@ public partial class CornMaker
     /// <param name="startDays">起始日数</param>
     /// <param name="endDays">截止日数</param>
     /// <returns></returns>
-    public CornMaker RangeDays(int startDays, int endDays)
+    public CronMaker RangeDays(int startDays, int endDays)
     {
 
         if (_days.Length > 0)
